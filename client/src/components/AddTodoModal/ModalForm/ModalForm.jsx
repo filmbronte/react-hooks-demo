@@ -3,12 +3,19 @@ import Button from 'react-bootstrap/Button';
 
 function ModalForm({
 	submitForm,
+	formValues,
+	onChange
 }) {
 	return (
 		<Form onSubmit={submitForm}>
 			<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 				<Form.Label>Add: </Form.Label>
-				<Form.Control placeholder="Todo..." />
+				<Form.Control
+					name="text"
+					value={formValues.name}
+					onChange={onChange}
+					placeholder="Todo..."
+				/>
 			</Form.Group>
 			<div style={{ textAlign: 'center' }}>
 				<Button variant="secondary">Close</Button>

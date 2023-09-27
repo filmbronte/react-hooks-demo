@@ -1,18 +1,24 @@
-import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+
+import { useForm } from '../../hooks/useForm';
+
+import Modal from 'react-bootstrap/Modal';
 import ModalForm from './ModalForm/ModalForm';
 
 function AddTodoModal() {
-	const [formValues, setFormValues] = useState([]);
+	const [formValues, setFormValues] = useState({
+		text: '',
+	});
 
 	const onChangeHandler = (e) => {
+		setFormValues(state => ({ ...state, [e.target.name]: e.target.value }))
 
 	};
 
 	const submitForm = (e) => {
 		e.preventDefault();
 
-		console.log('submitted');
+		console.log(formValues);
 	};
 
 	return (
@@ -23,7 +29,11 @@ function AddTodoModal() {
 				</Modal.Header>
 
 				<Modal.Body>
-					<ModalForm submitForm={submitForm}/>
+					<ModalForm
+						submitForm={submitForm}
+						formValues={formValues}
+						onChange={onChangeHandler}
+					/>
 				</Modal.Body>
 			</Modal>
 		</div>
