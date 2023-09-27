@@ -1,20 +1,23 @@
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
-function ModalForm() {
-  return (
-    <>
-      <Row>
-        <Form.Label column lg={2}>
-	Add todo:				
-        </Form.Label>
-        <Col>
-          <Form.Control type="text" placeholder="To do...." />
-        </Col>
-      </Row>
-    </>
-  );
+function ModalForm({
+	submitForm,
+}) {
+	return (
+		<Form onSubmit={submitForm}>
+			<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+				<Form.Label>Add: </Form.Label>
+				<Form.Control placeholder="Todo..." />
+			</Form.Group>
+			<div style={{ textAlign: 'center' }}>
+				<Button variant="secondary">Close</Button>
+				<Button variant="primary" type='submit' style={{ marginLeft: '20px' }}>
+					Save
+				</Button>
+			</div>
+		</Form>
+	);
 }
 
 export default ModalForm;

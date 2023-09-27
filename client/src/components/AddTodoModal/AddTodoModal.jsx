@@ -1,8 +1,6 @@
-import Form from 'react-bootstrap/Form';
-
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react';
+import ModalForm from './ModalForm/ModalForm';
 
 function AddTodoModal() {
 	const [formValues, setFormValues] = useState([]);
@@ -18,28 +16,14 @@ function AddTodoModal() {
 	};
 
 	return (
-		<div
-			className="modal show"
-			style={{ display: 'block', position: 'initial' }}
-		>
+		<div className="modal show" style={{ display: 'block', position: 'initial' }}>
 			<Modal show={true}>
 				<Modal.Header closeButton>
 					<Modal.Title>Add todo</Modal.Title>
 				</Modal.Header>
 
 				<Modal.Body>
-					<Form onSubmit={submitForm}>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Label>Add: </Form.Label>
-							<Form.Control placeholder="Todo..." />
-						</Form.Group>
-						<div style={{ textAlign: 'center' }}>
-							<Button variant="secondary">Close</Button>
-							<Button variant="primary" type='submit' style={{ marginLeft: '20px' }}>
-								Save
-							</Button>
-						</div>
-					</Form>
+					<ModalForm submitForm={submitForm}/>
 				</Modal.Body>
 			</Modal>
 		</div>
