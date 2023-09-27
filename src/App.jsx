@@ -7,10 +7,9 @@ function App() {
 
   return (
     <>
-      <Navigation/>
-      <ToDoList/>
+      <Navigation />
+      <ToDoList />
     </>
-
   )
 }
 
