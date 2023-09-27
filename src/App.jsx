@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navigation from './components/Navbar/Navbar';
-import ExampleCard from './components/ExampleCard/ExampleCard';
+import { ToDoList } from './components/ToDoList/ToDoList';
 
 function App() {
 
   return (
     <>
       <Navigation/>
-      <ExampleCard/>
+      <ToDoList/>
     </>
 
   )
