@@ -2,12 +2,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function ModalForm({
-	submitForm,
+	onSubmit,
 	formValues,
 	onChange
 }) {
 	return (
-		<Form onSubmit={submitForm}>
+		<Form onSubmit={onSubmit}>
 			<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
 				<Form.Label>Add: </Form.Label>
 				<Form.Control

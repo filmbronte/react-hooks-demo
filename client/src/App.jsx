@@ -20,11 +20,26 @@ function App() {
       .catch(err => console.log(err))
   }, []);
 
+  const onTodoAdd = async (values) => {
+    const response = await fetch(baseUrl, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    });
+
+    const result = await response.json();
+
+    console.log(result);
+    
+  }
+
   return (
     <>
       <Navigation />
       <ToDoList todos={todos}/>
-      <AddTodoModal/>
+      <AddTodoModal onTodoAdd={onTodoAdd}/>
     </>
   )
 }
