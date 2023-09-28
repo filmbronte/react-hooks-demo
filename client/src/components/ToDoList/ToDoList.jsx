@@ -4,6 +4,7 @@ import SubmitButton from '../Button/Button';
 
 export const ToDoList = ({
 	todos,
+	onTodoAddClick,
 }) => {
 	return (
 		<div style={{ width: "20%", position: 'relative', margin: '70px auto', textAlign: 'center',}}>
@@ -11,7 +12,7 @@ export const ToDoList = ({
 			<ListGroup style={{marginBottom: "20px"}}>
 				{todos.map(todo => <ToDoItem key={todo._id} {...todo} />)}
 			</ListGroup>
-			<SubmitButton />
+			<SubmitButton onTodoAddClick={onTodoAddClick}/>
 		</div>
 	)
 }

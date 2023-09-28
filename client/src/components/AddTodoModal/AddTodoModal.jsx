@@ -5,6 +5,8 @@ import ModalForm from './ModalForm/ModalForm';
 
 function AddTodoModal({
 	onTodoAdd,
+	show,
+	onTodoAddClose,
 }) {
 	const { formValues, onChangeHandler, onSubmit } = useForm({
 		text: '',
@@ -12,8 +14,8 @@ function AddTodoModal({
 
 	return (
 		<div className="modal show" style={{ display: 'block', position: 'initial' }}>
-			<Modal show={true}>
-				<Modal.Header closeButton>
+			<Modal show={show}>
+				<Modal.Header closeButton onHide={onTodoAddClose}>
 					<Modal.Title>Add todo</Modal.Title>
 				</Modal.Header>
 
@@ -22,6 +24,7 @@ function AddTodoModal({
 						onSubmit={onSubmit}
 						formValues={formValues}
 						onChange={onChangeHandler}
+						onTodoAddClose={onTodoAddClose}
 					/>
 				</Modal.Body>
 			</Modal>

@@ -1,10 +1,12 @@
 import Button from 'react-bootstrap/Button';
 
-function SubmitButton() {
+function SubmitButton({
+	onTodoAddClick,
+}) {
   return (
     <>
       <div>
-        <Button variant="secondary" size="sm">
+        <Button onClick={onTodoAddClick} variant="secondary" size="sm">
           Add
         </Button>
       </div>

@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 function ModalForm({
 	onSubmit,
 	formValues,
-	onChange
+	onChange,
+	onTodoAddClose,
 }) {
 	return (
 		<Form onSubmit={onSubmit}>
@@ -18,7 +19,7 @@ function ModalForm({
 				/>
 			</Form.Group>
 			<div style={{ textAlign: 'center' }}>
-				<Button variant="secondary">Close</Button>
+				<Button variant="secondary" onClick={onTodoAddClose}>Close</Button>
 				<Button variant="primary" type='submit' style={{ marginLeft: '20px' }}>
 					Save
 				</Button>
